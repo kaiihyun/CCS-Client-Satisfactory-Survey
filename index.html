@@ -77,9 +77,24 @@
     <div><label for="comments">Comments and suggestions</label><textarea id="comments" name="comments" maxlength="1000" placeholder="Tell us what went well…"></textarea></div>
     <div><label for="contact">Contact number or email <small>(optional)</small></label><input type="text" id="contact" name="contact" maxlength="100" placeholder="09XX XXX XXXX or name@email.com"></div>
   </div>
-  <div class="actions"><button class="btn" type="submit">Submit survey</button><p class="fine">Your answers are confidential.</p></div>
+  <div class="actions">
+    <button class="btn" type="submit">Submit survey</button>
+    <p class="fine">Your answers are confidential.</p>
+    <p class="error send-err" id="sendErr" hidden>We couldn't send your survey. Check your connection and try again.</p>
+  </div>
 </section>
 </form>
+
+<!-- Popup shown after a valid submission -->
+<div class="overlay" id="done" hidden role="dialog" aria-modal="true" aria-labelledby="done-t">
+  <div class="modal">
+    <div class="ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <h2 id="done-t">Survey Submitted</h2>
+    <p class="thanks">Thank you for filling out this survey.<br>Your feedback is much appreciated.</p>
+    <p class="when" id="when"></p>
+    <button type="button" class="btn2" id="again">Submit Another Response</button>
+  </div>
+</div>
 </div>
 
 <script>
@@ -195,10 +210,51 @@ $('#sqd').addEventListener('change',e=>{const p=$('.picked',e.target.closest('.s
 /* ---------- Feedback prompt ---------- */
 $$('[name=feedback_type]').forEach(r=>r.addEventListener('change',()=>{$('#comments').placeholder=r.value==='Positive'?'Tell us what went well…':'Tell us what went wrong and how we can improve…'}));
 
-/* ---------- Validation ---------- */
+/* ---------- Collect results (for console / JSON) ---------- */
 const form=$('#survey');
+function collect(){
+  const val=n=>{const el=form.elements[n];return el?el.value:''};
+  const chk=n=>{const r=form.querySelector(`[name="${n}"]:checked`);return r};
+  const split=s=>{const i=s.indexOf('|');return i<0?{value:s}:{code:s.slice(0,i),label:s.slice(i+1)}};
+  const cc=n=>{const r=chk(n);return r?{value:+r.value,label:CC[n][r.value-1]}:null};
+  const svc=val('serviceavailed');
+  return {
+    transaction:{date:val('date_formatted'),unit:val('office'),unitKey:val('key'),campus:val('campus')},
+    client:{
+      clientType:val('client_type'),
+      client:split(val('theclient')),
+      sex:val('sex'),
+      age:val('age')?+val('age'):null,
+      regionOfResidence:split(val('region')),
+      office:val('client_office')
+    },
+    serviceAvailed:{service:svc,othersSpecified:svc==='Others'?val('others_service_availed').trim():null},
+    personnel:$$('[name="personnel[]"]:checked').map(i=>i.value),
+    citizensCharter:{awareness:cc('cc1'),visibility:cc('cc2'),helpfulness:cc('cc3')},
+    serviceQualityDimensions:SQD.map((q,n)=>{const r=chk('sqd'+n);return {number:n+1,question:q,answer:r?r.dataset.t:null,value:r?(r.value==='NA'?'NA':+r.value):null}}),
+    feedback:{type:chk('feedback_type').value,comments:val('comments').trim(),contact:val('contact').trim()||null}
+  };
+}
+
+/* ---------- Submitted popup ---------- */
+const done=$('#done'),btn=$('.btn',form),sendErr=$('#sendErr');
+let sending=false; // guards against double submits
+
+function showDone(){
+  $('#when').textContent='Submitted on '+new Date().toLocaleString('en-US',{dateStyle:'long',timeStyle:'short'});
+  done.hidden=false;
+  document.body.classList.add('lock');
+  $('#again').focus();
+}
+// Start over: reload the page and always land at the top
+history.scrollRestoration='manual';
+$('#again').addEventListener('click',()=>{window.scrollTo(0,0);location.reload()});
+
+/* ---------- Validation + submit ---------- */
 form.addEventListener('change',e=>{const g=e.target.closest('[data-need]');if(g){$('.error',g).hidden=true;g.classList.remove('has-error')}});
-form.addEventListener('submit',e=>{
+form.addEventListener('submit',async e=>{
+  e.preventDefault();               // we send the data ourselves (no page navigation)
+  if(sending)return;                // already submitted, ignore extra clicks / Enter
   let bad=null;const flag=el=>{if(!bad)bad=el};
   combos.forEach(c=>{if(!c.ok())flag(c.field)});
   $$('[data-need]').forEach(g=>{
@@ -208,8 +264,32 @@ form.addEventListener('submit',e=>{
     if(!ok){g.classList.add('has-error');$('.error',g).hidden=false;flag(g)}});
   const ow=$('#othersWrap');
   if(!ow.hidden&&!$('#others_i').value.trim()){ow.classList.add('has-error');$('.error',ow).hidden=false;flag(ow)}
-  if(bad){e.preventDefault();bad.scrollIntoView({behavior:'smooth',block:'center'});return}
-  const b=$('.btn');b.disabled=true;b.textContent='Submitting…';
+  if(bad){bad.scrollIntoView({behavior:'smooth',block:'center'});return}
+
+  // Valid: lock the form right away
+  sending=true;sendErr.hidden=true;
+  btn.disabled=true;btn.textContent='Submitting…';
+  form.classList.add('sending');
+  if(document.activeElement)document.activeElement.blur();
+
+  const data=collect();
+  console.log('Survey results (JSON):\n'+JSON.stringify(data,null,2));
+
+  // Send every field the form has, plus the full answers as one JSON field
+  const body=new FormData(form);
+  body.append('survey_json',JSON.stringify(data));
+  try{
+    // no-cors: the response is opaque, but the data is still delivered to the server
+    await fetch(form.action,{method:'POST',body,mode:'no-cors'});
+    btn.textContent='Submitted';
+    showDone();
+  }catch(err){
+    console.error('Submit failed',err);
+    sending=false;
+    form.classList.remove('sending');
+    btn.disabled=false;btn.textContent='Submit survey';
+    sendErr.hidden=false;
+  }
 });
 })();
 </script>
