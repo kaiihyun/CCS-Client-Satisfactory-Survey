@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MSU-IIT Client Satisfaction Survey</title>
+<link rel="icon" href="msuiit-logo.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+<header class="masthead">
+  <img src="msuiit-logo.png" alt="MSU-IIT logo">
+  <p class="univ">Mindanao State University - IIT</p>
+  <h1>Client Satisfaction Survey</h1>
+  <p class="tag">HELP US SERVE YOU BETTER!</p>
+  <p class="intro">This Client Satisfaction Measurement (CSM) tracks the customer experience of government offices. Your feedback on your <u>recently concluded transaction</u> will help this office provide better service. By submitting this form, you consent to and authorize MSU-IIT to collect, lawfully use, and/or lawfully disclose your personal information provided in the CSM. All information is treated with confidentiality in accordance with the Philippine Data Privacy Act of 2012.</p>
+</header>
+
+<form class="card" id="survey" method="post" action="https://one.msuiit.edu.ph/ovcsi/csms/msu/index.php/msu_ol_css/csms_page2" novalidate>
+
+<section class="section">
+  <div class="sec-head"><h2>Client's Transaction</h2></div>
+  <div class="fields">
+    <div class="full"><label for="d">Transaction date</label><input type="text" id="d" name="date_formatted" readonly></div>
+    <div class="full"><label for="o">Unit / Department / College</label><input type="text" id="o" name="office" value="College of Computer Studies" readonly><input type="hidden" name="key" value="CCS"></div>
+    <div class="full"><label for="c">Campus</label><input type="text" id="c" name="campus" value="IIT" readonly></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><h2>Client's Information</h2></div>
+  <div class="fields">
+    <div class="field full" data-combo="client_type"><label for="client_type_i">Client type <span class="req">*</span></label><div class="combo"></div><p class="error" hidden></p></div>
+    <div class="field full" data-combo="theclient"><label for="theclient_i">Client <span class="req">*</span></label><div class="combo"></div><p class="error" hidden></p></div>
+    <div class="field" data-combo="sex"><label for="sex_i">Sex <span class="req">*</span></label><div class="combo"></div><p class="error" hidden></p></div>
+    <div class="field" data-combo="age"><label for="age_i">Age <span class="req">*</span></label><div class="combo"></div><p class="error" hidden></p></div>
+    <div class="field full" data-combo="region"><label for="region_i">Region of residence <span class="req">*</span></label><div class="combo"></div><p class="error" hidden></p></div>
+    <div class="field full" data-combo="client_office"><label for="client_office_i">Your office / college <span class="req">*</span></label><div class="combo"></div><p class="error" hidden></p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><h2>Service Availed</h2></div>
+  <div class="fields one">
+    <div class="field full" data-combo="serviceavailed"><label for="serviceavailed_i">Service availed <span class="req">*</span></label><div class="combo"></div><p class="error" hidden></p></div>
+    <div class="full" id="othersWrap" hidden><label for="others_i">Please specify your service <span class="req">*</span></label><input type="text" id="others_i" name="others_service_availed" placeholder="Type your service here" maxlength="150"><p class="error" hidden>Please specify your service.</p></div>
+  </div>
+  <div class="ppl" data-need="ppl">
+    <h3 class="sub">Personnel transacted with <span class="req">*</span></h3><p class="hint">Select all that apply</p>
+    <div class="p-grid" id="ppl"></div>
+    <label class="choice unk"><input class="vh" type="checkbox" name="personnel[]" value="I can't identify"><span class="choice-mark"></span><span>I can't identify</span></label><p class="error" hidden>Please select at least one person.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><h2>Citizen's Charter</h2></div>
+  <div class="cc-grid single" id="cc">
+    <div data-need="cc1"><p class="q-t">Which best describes your awareness of a Citizen's Charter (CC)? <span class="req">*</span></p><div class="list"></div><p class="error" hidden>Please choose one.</p></div>
+    <div data-need="cc2" hidden><p class="q-t">If aware of the CC, was the CC of this office… <span class="req">*</span></p><div class="list"></div><p class="error" hidden>Please choose one.</p></div>
+    <div data-need="cc3" hidden><p class="q-t">If aware of the CC, how much did it help you in your transaction? <span class="req">*</span></p><div class="list"></div><p class="error" hidden>Please choose one.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><h2>Service Quality Dimensions</h2></div>
+  <div id="sqd"></div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><h2>Feedback</h2></div>
+  <div class="fb-row" role="radiogroup" aria-label="Feedback type">
+    <label class="fb pos"><input class="vh" type="radio" name="feedback_type" value="Positive" checked><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>Positive</label>
+    <label class="fb neg"><input class="vh" type="radio" name="feedback_type" value="Negative"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/></svg>Negative</label>
+  </div>
+  <div class="stack">
+    <div><label for="comments">Comments and suggestions</label><textarea id="comments" name="comments" maxlength="1000" placeholder="Tell us what went well…"></textarea></div>
+    <div><label for="contact">Contact number or email <small>(optional)</small></label><input type="text" id="contact" name="contact" maxlength="100" placeholder="09XX XXX XXXX or name@email.com"></div>
+  </div>
+  <div class="actions"><button class="btn" type="submit">Submit survey</button><p class="fine">Your answers are confidential.</p></div>
+</section>
+</form>
+</div>
+
+<script>
+(()=>{
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const O=(a,f)=>a.map(f);
+
+/* ---------- Data (edit here) ---------- */
+const PERSONNEL=[ // set photo:'url' to use a picture; blank = placeholder
+ {name:'Chavita G. del Mar',photo:''},{name:'Juvy D. Boniao',photo:''},{name:'Allan P. Bicada',photo:''},{name:'Blace D. Delos Angeles',photo:''},{name:'Cendy Lou O. Odvina',photo:''},{name:'Sonny Boy P. Eduave',photo:''},{name:'Antonio C. Dalogdog, Jr.',photo:''},{name:'Ivan Joshua G. Jorda',photo:''},{name:'Kristian Kirk L. Origenes',photo:''},{name:'John Ralph M. Cababat',photo:''},{name:'Carlo R. Jacinto',photo:''},{name:'Anna P. Mangubat',photo:''}];
+const SERVICES = [
+  'Application for Comprehensive Examination',
+  'Application of Thesis/Dissertation-Related Services',
+  'Borrowing of Laboratory Supplies and Equipment for Laboratory Classes',
+  'Issuance of Certification for Courses Taken',
+  'Issuance of Deployment of On-the-Job Training and Student Interns',
+  'Issuance of Prospectus/Program of Study',
+  'Return of Borrowed Laboratory Supplies and Equipment for Laboratory Classes',
+  'Request a Summary of the Teacher Efficiency Rating',
+  'Request a Permit to Hold Make-Up or Special Classes',
+  'Issuance of Confirmation to Travel or Attend Trainings, Seminars, and Conferences',
+  'Request for Use of Rooms, Facilities, or Sound System',
+  'Others'
+];
+const OFFICES=['Accounting Division','Alumni and Endowment Fund Center','Career Center','Cashiering Division','CED-Integrated Developmental School','Center for Advanced Education and Lifelong Learning','Center for Bamboo Research and Technology','Center for Computational Analytics and Modelling','Center for Culture and Arts','Center for General Education of MSU-IIT','Center for Information and Communication Technology','Center for Learning and Academic Support Services','Center for Pedagogical Innovations','Ceramic Training Center','College of Arts and Social Sciences','College of Computer Studies','College of Economics, Business, and Accountancy','College of Education','College of Engineering','College of Health Sciences','College of Science and Mathematics','Fab Lab MSU-IIT','Gender and Development Resource Center','Graduate Dorm','Hostel','Human Resource Management Division','iDEYA: Center for Technopreneurship Innovation','Infrastructure Services Division','Institute for Peace and Development in Mindanao','Institute for Policy Innovation and Leadership','Internal Audit Services Unit','Knowledge and Technology Transfer Office','Legal Services Office','MSU-IIT Center for Resiliency','MSU-IIT Liaison Office','Natural Science Museum','Office of Admissions, Scholarships and Grants','Office of Business Affairs','Office of Communications','Office of Guidance and Counseling','Office of Institutional Planning and Development Services','Office of Medical, Dental and Health Services','Office of Monitoring and Evaluation','Office of Research Dissemination','Office of Research Management','Office of Sports Development','Office of Student Development Services','Office of Student Residences and Food Services','Office of the Budget Management','Office of the Campus Secretary','Office of the Director for Administration','Office of the Director for Finance','Office of the National Services Training Program','Office of the Quality Assurance Management Services','Office of the University Registrar','Office of the Vice-Chancellor for International Affairs','Policy Center for Governance, Public Leadership and Management','Policy Center for Human Rights and Sustainable Development','Premier Research Institute of Science and Mathematics','Procurement Management Division','Research Center for Healthy Aging (RCHA) of MSU-IIT','Research Institute for Engineering and Innovative Technology','Research Integrity and Compliance Office','School of Interdisciplinary Studies','Security and Investigation Division','Selling and Renting Unit','Supply and Property Management Division','TAPU-Ceramic Training Center','Technology Application and Promotion Unit','University Library','University Library- CASS','University Library- CEBA','University Library- CED','University Library- CED-IDS','University Library- CHS','University Library- COE','University Library- CSM','University Library- Main','WE CARE Office'];
+const REGIONS=[['I','Region 1 - Ilocos Region'],['II','Region 2 - Cagayan Valley'],['III','Region 3 - Central Luzon'],['IV-A','Region 4A - CALABARZON'],['IV-B','Region 4B - MIMAROPA'],['V','Region 5 - Bicol Region'],['VI','Region 6 - Western Visayas'],['VII','Region 7 - Central Visayas'],['VIII','Region 8 - Eastern Visayas'],['IX','Region 9 - Zamboanga Peninsula'],['X','Region 10 - Northern Mindanao'],['XI','Region 11 - Davao Region'],['XII','Region 12 - SOCCSKSARGEN'],['XIII','Region 13 - National Capital Region'],['XIV','Region 14 - Cordillera Administrative Region'],['XV-A','Region 15A - BARRM A'],['XV-B','Region 15B - BARMM B'],['XVI','Region 16 - CARAGA']];
+const CLIENTS=[['INTERNAL','Faculty'],['INTERNAL','Lecturer'],['INTERNAL','Official/Responsibility Center Head'],['INTERNAL','Staff'],['EXTERNAL','Alumni'],['EXTERNAL','Student (Enrolled)'],['EXTERNAL','Student (Off Sem)'],['EXTERNAL','Parent of a Student/Alumni'],['EXTERNAL','Supplier'],['EXTERNAL','General Client/Citizen/Visitor']];
+const SQD=['I am satisfied with the service that I availed.','I spent a reasonable amount of time for my transaction.',"The office followed the transaction's requirements and steps based on the information provided.",'The steps (including payment) I needed to do for my transaction were easy and simple.','I easily found information about my transaction from the office or its website.','I paid a reasonable amount of fees for my transaction. (If the service was free, mark N/A.)','I feel the office was fair to everyone, or "I did not witness any unfair treatment."','I was treated courteously by the staff, and (if asked for help) the staff was helpful.','I got what I needed from the government office, or (if denied) denial of request was sufficiently explained to me.'];
+const TC=['#c62828','#e65100','#b88a00','#6b8e23','#2e7d32','#777'];
+const SCALE=[[1,'Strongly Disagree'],[2,'Disagree'],[3,'Neutral','Neither Agree nor Disagree'],[4,'Agree'],[5,'Strongly Agree'],['NA','N/A']];
+const CC={cc1:["I know what a CC is and I saw this office's CC.","I know what a CC is but did NOT see this office's CC.","I learned of the CC only when I saw this office's CC.","I do not know what a CC is and did not see one in this office."],
+ cc2:['Easy to see','Somewhat easy to see','Difficult to see','Not visible at all'],cc3:['Helped very much','Somewhat helped','Did not help']};
+
+/* ---------- Combobox (type to filter, pick from list) ---------- */
+const mk=(a,tag)=>a.map(v=>({value:v,label:v,tag}));
+const combos=[];
+function combo(name,o){
+  const field=$(`[data-combo=${name}]`),box=$('.combo',field),err=$('.error',field);
+  box.innerHTML=`<input type="text" id="${name}_i" role="combobox" aria-expanded="false" aria-controls="${name}_l" autocomplete="off" spellcheck="false" placeholder="${o.ph}" ${o.num?'inputmode="numeric"':''}>
+  <button type="button" class="combo-toggle" tabindex="-1" aria-label="Show options"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+  <input type="hidden" name="${name}"><ul class="combo-list" id="${name}_l" role="listbox" hidden></ul>`;
+  const inp=$('#'+name+'_i',box),hid=$('[type=hidden]',box),ul=$('ul',box);
+  let cur=null,shown=[],act=-1,isOpen=false;
+  const filt=q=>{q=q.trim().toLowerCase();if(!q)return o.opts.slice();
+    const a=o.opts.filter(x=>x.label.toLowerCase().startsWith(q)),b=o.pre?[]:o.opts.filter(x=>!a.includes(x)&&x.label.toLowerCase().includes(q));return a.concat(b)};
+  const hl=(t,q)=>{const i=q?t.toLowerCase().indexOf(q.trim().toLowerCase()):-1;return i<0?esc(t):esc(t.slice(0,i))+'<mark>'+esc(t.slice(i,i+q.trim().length))+'</mark>'+esc(t.slice(i+q.trim().length))};
+  const setAct=(i,sc)=>{act=i;$$('li[data-i]',ul).forEach((li,n)=>{li.classList.toggle('on',n===i);if(n===i&&sc)li.scrollIntoView({block:'nearest'})})};
+  const show=q=>{shown=filt(q);ul.innerHTML=shown.length?shown.map((x,i)=>`<li role="option" data-i="${i}" aria-selected="${!!cur&&cur.value===x.value}"><span>${hl(x.label,q)}</span>${x.tag?`<span class="chip">${x.tag}</span>`:''}</li>`).join(''):'<li class="none">No matches</li>';
+    ul.hidden=false;isOpen=true;inp.setAttribute('aria-expanded','true');setAct(q?0:Math.max(0,shown.findIndex(x=>cur&&x.value===cur.value)),true)};
+  const close=()=>{ul.hidden=true;isOpen=false;inp.setAttribute('aria-expanded','false')};
+  const fail=m=>{field.classList.add('has-error');err.textContent=m;err.hidden=false};
+  const sync=()=>o.on&&o.on(cur);
+  const pick=x=>{cur=x;inp.value=x.label;hid.value=x.value;field.classList.remove('has-error');err.hidden=true;close();sync()};
+  inp.addEventListener('focus',()=>{show('');setTimeout(()=>inp.select(),0)});
+  inp.addEventListener('click',()=>{if(!isOpen)show('')});
+  inp.addEventListener('input',()=>{const q=inp.value.trim().toLowerCase(),x=o.opts.find(y=>y.label.toLowerCase()===q);cur=x||null;hid.value=x?x.value:'';show(inp.value);sync()});
+  inp.addEventListener('keydown',e=>{
+    if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();if(!isOpen)show('');else setAct(Math.max(0,Math.min(shown.length-1,act+(e.key==='ArrowDown'?1:-1))),true)}
+    else if(e.key==='Enter'&&isOpen){e.preventDefault();if(shown[act])pick(shown[act])}
+    else if(e.key==='Escape'){close();inp.value=cur?cur.label:''}});
+  inp.addEventListener('blur',()=>{const q=inp.value.trim().toLowerCase();
+    if(!q){cur=null;hid.value='';close();sync();return fail('This field is required.')}
+    if(cur&&cur.label.toLowerCase()===q)return close();
+    const m=filt(q);if(m.length===1)return pick(m[0]);
+    if(cur){inp.value=cur.label;close()}else{inp.value='';hid.value='';close();fail('Please choose from the list.')}});
+  ul.addEventListener('mousedown',e=>e.preventDefault());
+  ul.addEventListener('click',e=>{const li=e.target.closest('li[data-i]');if(li)pick(shown[li.dataset.i])});
+  ul.addEventListener('mouseover',e=>{const li=e.target.closest('li[data-i]');if(li)setAct(+li.dataset.i)});
+  $('.combo-toggle',box).addEventListener('mousedown',e=>e.preventDefault());
+  $('.combo-toggle',box).addEventListener('click',()=>{if(isOpen)close();else if(document.activeElement===inp)show('');else inp.focus()});
+  if(o.def){const x=o.opts.find(y=>y.value===o.def);if(x)pick(x)}
+  combos.push({field,inp,ok:()=>{if(hid.value)return true;fail(inp.value?'Please choose from the list.':'This field is required.');return false}});
+}
+combo('client_type',{ph:'Type or choose…',opts:mk(['Citizen','Business','Government'])});
+combo('theclient',{ph:'Type or choose…',opts:CLIENTS.map(([g,l])=>({value:g+'|'+l,label:l}))});
+combo('sex',{ph:'Male / Female',opts:mk(['Male','Female'])});
+combo('age',{ph:'Type your age',num:1,pre:1,opts:mk(Array.from({length:76},(_,i)=>String(i+15)))});
+combo('region',{ph:'Type e.g. 10 or Davao',def:'X|Region 10 - Northern Mindanao',opts:REGIONS.map(([c,l])=>({value:c+'|'+l,label:l}))});
+combo('client_office',{ph:'Type to search…',def:'College of Computer Studies',opts:[{value:'NA',label:'Not Applicable (N/A)'}].concat(mk(OFFICES))});
+combo('serviceavailed',{ph:'Type or choose…',opts:mk(SERVICES),on:x=>{
+  const w=$('#othersWrap'),s=!!x&&x.value==='Others';
+  w.hidden=!s;
+  if(!s){$('#others_i').value='';w.classList.remove('has-error');$('.error',w).hidden=true}}});
+$('#others_i').addEventListener('input',()=>{const w=$('#othersWrap');w.classList.remove('has-error');$('.error',w).hidden=true});
+
+/* ---------- Date ---------- */
+$('#d').value=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+
+/* ---------- Radio helper ---------- */
+const radio=(name,val,text,extra='')=>`<label class="choice"><input class="vh" type="radio" name="${name}" value="${esc(val)}"><span class="choice-mark"></span><span>${esc(text)}</span>${extra}</label>`;
+
+/* ---------- Personnel ---------- */
+const ph=i=>'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" fill="${['#f2b705','#830006','#e98303','#b3202a'][i%4]}"/><circle cx="60" cy="46" r="22" fill="#fff" opacity=".85"/><path d="M16 120c0-28 20-44 44-44s44 16 44 44z" fill="#fff" opacity=".85"/></svg>`);
+$('#ppl').innerHTML=PERSONNEL.map((p,i)=>`<label class="person"><input class="vh" type="checkbox" name="personnel[]" value="${esc(p.name)}"><span class="avatar"><img alt="" src="${esc(p.photo||ph(i))}" data-i="${i}"><span class="badge"><svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#fff" stroke-width="2.2"/></svg></span></span><span class="pname">${esc(p.name)}</span></label>`).join('');
+$$('#ppl img').forEach(im=>im.addEventListener('error',()=>{im.src=ph(+im.dataset.i)},{once:true}));
+
+$('[data-need=ppl]').addEventListener('change',e=>{const u=$('.unk input'),t=e.target;if(t.type!=='checkbox')return;if(t===u&&u.checked)$$('#ppl input').forEach(i=>i.checked=false);else if(t!==u&&t.checked)u.checked=false});
+
+/* ---------- Citizen's Charter ---------- */
+['cc1','cc2','cc3'].forEach(n=>{$('[data-need='+n+'] .list').innerHTML=CC[n].map((t,i)=>radio(n,i+1,t)).join('')});
+$$('[data-need=cc2] input,[data-need=cc3] input').forEach(i=>i.disabled=true);
+$$('[name=cc1]').forEach(r=>r.addEventListener('change',()=>{
+  const on=r.value!=='4';$('#cc').classList.toggle('single',!on);
+  ['cc2','cc3'].forEach(n=>{const b=$('[data-need='+n+']');b.hidden=!on;$$('input',b).forEach(i=>{i.disabled=!on;if(!on)i.checked=false})})}));
+
+/* ---------- SQD faces ---------- */
+const FC=['#d93b3b','#f08a3c','#f4c430','#a6c93a','#4cae6b'],MO=['M10 28Q16 20 22 28','M11 27Q16 23 21 27','M11 25H21','M11 23Q16 28 21 23','M9 22Q16 31 23 22'];
+const face=v=>v==='NA'?'<span class="face-art na">N/A</span>':`<span class="face-art"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="${FC[v-1]}"/><circle cx="11" cy="13" r="1.8" fill="#3b2a1a"/><circle cx="21" cy="13" r="1.8" fill="#3b2a1a"/><path d="${MO[v-1]}" fill="none" stroke="#3b2a1a" stroke-width="2" stroke-linecap="round"/></svg></span>`;
+$('#sqd').innerHTML=SQD.map((q,n)=>`<div class="sqd" data-need="sqd${n}"><div class="q"><span class="q-num">${n+1}</span><span>${esc(q)}</span></div><div class="faces" role="radiogroup" aria-label="Answer">${SCALE.map(([v,l,t])=>`<label class="face" style="--c:${TC[v==='NA'?5:v-1]}" title="${t||l}"><input class="vh" type="radio" name="sqd${n}" value="${v}" data-t="${t||l}">${face(v)}<span class="face-lbl">${l}</span></label>`).join('')}</div><p class="picked" aria-live="polite">Tap a face to answer</p><p class="error" hidden>Please choose an answer.</p></div>`).join('');
+$('#sqd').addEventListener('change',e=>{const p=$('.picked',e.target.closest('.sqd'));p.textContent=e.target.dataset.t;p.classList.add('set');p.style.color=e.target.closest('.face').style.getPropertyValue('--c')});
+
+/* ---------- Feedback prompt ---------- */
+$$('[name=feedback_type]').forEach(r=>r.addEventListener('change',()=>{$('#comments').placeholder=r.value==='Positive'?'Tell us what went well…':'Tell us what went wrong and how we can improve…'}));
+
+/* ---------- Validation ---------- */
+const form=$('#survey');
+form.addEventListener('change',e=>{const g=e.target.closest('[data-need]');if(g){$('.error',g).hidden=true;g.classList.remove('has-error')}});
+form.addEventListener('submit',e=>{
+  let bad=null;const flag=el=>{if(!bad)bad=el};
+  combos.forEach(c=>{if(!c.ok())flag(c.field)});
+  $$('[data-need]').forEach(g=>{
+    if(g.hidden)return;const k=g.dataset.need;let ok;
+    if(k==='ppl')ok=$$('input:checked',g).length>0;
+    else ok=!!$('input:checked',g);
+    if(!ok){g.classList.add('has-error');$('.error',g).hidden=false;flag(g)}});
+  const ow=$('#othersWrap');
+  if(!ow.hidden&&!$('#others_i').value.trim()){ow.classList.add('has-error');$('.error',ow).hidden=false;flag(ow)}
+  if(bad){e.preventDefault();bad.scrollIntoView({behavior:'smooth',block:'center'});return}
+  const b=$('.btn');b.disabled=true;b.textContent='Submitting…';
+});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>MSU-IIT Client Satisfaction Survey</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://one.msuiit.edu.ph/ovcsi/csms/msu/library/assets/img/favicon.png" rel="icon">
+  <link rel="stylesheet" href="">
+	<link rel="stylesheet" href="https://one.msuiit.edu.ph/ovcsi/csms/msu/library/assets/css/bootstrap.css"> 
+  <link rel="stylesheet" href="https://one.msuiit.edu.ph/ovcsi/csms/msu/library/dist/css/dd.css?v=4.0">
+
+  <script type="text/javascript">
+    var expanded = false;
+
+    function showCheckboxes() {
+      var checkboxes = document.getElementById("checkboxes");
+      if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+      } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }
+  </script>
+  <style type="text/css">
+    
+body {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  background-color: #f4f3eb;
+  color:#36454F;
+  padding: 6em 4em 4em 4em; }
+  body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+    -moz-animation: none !important;
+    -webkit-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important; }
+  body > * {
+    position: relative;
+    z-index: 2; }
+  @media screen and (max-width: 1680px) {
+    body {
+      padding: 6em 3.5em 3.5em 3.5em; } }
+  @media screen and (max-width: 736px) {
+    body {
+      padding: 5em 2em 2em 2em; } }
+  @media screen and (max-width: 360px) {
+    body {
+      padding: 5em 1.25em 1.25em 1.25em; } }
+
+    .multiselect {
+      width: 320px;
+    }
+
+    .selectBox {
+      position: relative;
+    }
+
+    .selectBox select {
+      width: 100%;
+      font-weight: bold;
+    }
+
+    .overSelect {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  
+    #checkboxes {
+      display: none;
+      border: 1px #dadada solid;
+    }
+
+    #checkboxes label {
+      display: block;
+    }
+
+    #checkboxes label:hover {
+      background-color: #ffffff;
+    }
+    
+  </style>
+<style id="dark-reader-style" type="text/css">@media screen {
+html {-webkit-transition : -webkit-filter 300ms linear;}
+}</style></head>
+
+<body class="is-preload">
+      <center><img src="https://one.msuiit.edu.ph/ovcsi/csms/msu/library/images/msuiit-logo.png" width="120"></center>
+        <div class="section-title" align="center" style="color:#717180"> 
+        <span style="color:#000000">Mindanao State University - IIT</span>
+          <h2 style="color:#830006;font-weight:bold">Client Satisfaction Survey</h2>
+          <strong>HELP US SERVE YOU BETTER!</strong>
+          <p>This Client Satisfaction Measurement (CSM) tracks the customer experience of government offices. Your feedback
+            on your <u>recently concluded transaction</u> will help this office provide a better service. 
+            By filling out and submitting this form, your consent to and authorize MSU-IIT to collect lawfully use, and/or lawfully disclose 
+            your personal information provided in the CSM. All information and responses collected will be treated with confidentiality 
+          in accordance with the Philippine Data Prviacy Act of 2012</p>
+        </div>
+    
+      <div class="container">        
+        <form action="https://one.msuiit.edu.ph/ovcsi/csms/msu/index.php/msu_ol_css/csms_page2" method="post">
+        <div class="row">
+          <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">            
+              <div class="row"> 
+              <div class="form-group col-md-12 mt-3 mt-md-2">
+                  <h3 style="color:#E98303;">Client's Transaction</h3>
+               </div>                 
+               <div class="form-group col-md-4 mt-3 mt-md-2">
+                  <label for="date_visit">Transaction Date</label>
+                  <input type="text" style="font-weight:normal;color:#71797E;background-color:#E5E4E2" name="date_formatted" class="form-control" value="October 25, 2026" id="name" required="" readonly="">
+                </div>                
+               <div class="form-group col-md-4 mt-3 mt-md-2">
+                  <label for="office">Unit/Department/College</label>
+                  <input type="text" style="font-weight:normal;color:#71797E;background-color:#E5E4E2" name="office" class="form-control" value="College of Computer Studies" id="name" required="" readonly="">
+                  <input type="hidden" name="key" value="CCS">
+                </div>      
+                <div class="form-group col-md-4 mt-3 mt-md-2">
+                  <label for="campus">Campus</label>
+                  <input type="text" style="font-weight:normal;color:#71797E;background-color:#E5E4E2" name="campus" class="form-control" value="IIT" id="name" required="" readonly="">
+                </div>     
+                <div class="form-group col-md-12 mt-3 mt-md-2">
+                  <h3 style="color:#E98303;">Client's Information</h3>
+               </div>         
+                <div class="form-group col-md-4 mt-3 mt-md-2">
+                  <label for="client_type">Client Type</label>
+                  <select style="font-weight:normal;color:#71797E;background-color:#ffffff" name="client_type" class="form-control" required="">
+                    <option value="">-- Select Client Type --</option>
+                    <option>Citizen</option>
+                    <option>Business</option>
+                    <option>Government</option>
+                  </select>
+                  
+                </div>
+                
+                  
+                <div class="form-group col-md-4 mt-3 mt-md-2">
+                <label for="client_type">Client</label>
+                <select style="font-weight:normal;color:#71797E;background-color:#ffffff" name="theclient" class="form-control" required="">
+                    <option value="">-- Select Client --</option>
+                    <option value="INTERNAL|Faculty">Faculty</option><option value="INTERNAL|Lecturer">Lecturer</option><option value="INTERNAL|Official/Responsibility Center Head">Official/Responsibility Center Head</option><option value="INTERNAL|Staff">Staff</option><option value="EXTERNAL|Alumni">Alumni</option><option value="EXTERNAL|Student (Enrolled)">Student (Enrolled)</option><option value="EXTERNAL|Student (Off Sem)">Student (Off Sem)</option><option value="EXTERNAL|Parent of a Student/Alumni">Parent of a Student/Alumni</option><option value="EXTERNAL|Supplier">Supplier</option><option value="EXTERNAL|General Client/Citizen/Visitor">General Client/Citizen/Visitor</option>                  </select>
+                </div>
+                <div class="form-group col-md-4 mt-3 mt-md-2">
+                  <label for="sex">Sex</label>
+                  <select style="font-weight:normal;color:#71797E;background-color:#ffffff" name="sex" class="form-control" required="">
+                    <option value="">-- Select Sex --</option>
+                    <option>Male</option>
+                    <option>Female</option>                  
+                  </select>
+                </div>     
+                <div class="form-group col-md-4 mt-3 mt-md-2">
+                  <label for="age">Age</label>
+                  <select style="font-weight:normal;color:#71797E;background-color:#ffffff" name="age" class="form-control" required="">
+                    <option value="">-- Select Age --</option>
+                    <option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option><option>32</option><option>33</option><option>34</option><option>35</option><option>36</option><option>37</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option><option>44</option><option>45</option><option>46</option><option>47</option><option>48</option><option>49</option><option>50</option><option>51</option><option>52</option><option>53</option><option>54</option><option>55</option><option>56</option><option>57</option><option>58</option><option>59</option><option>60</option><option>61</option><option>62</option><option>63</option><option>64</option><option>65</option><option>66</option><option>67</option><option>68</option><option>69</option><option>70</option><option>71</option><option>72</option><option>73</option><option>74</option><option>75</option><option>76</option><option>77</option><option>78</option><option>79</option><option>80</option><option>81</option><option>82</option><option>83</option><option>84</option><option>85</option><option>86</option><option>87</option><option>88</option><option>89</option><option>90</option>                  
+                  </select>
+                </div>
+                <div class="form-group col-md-4 mt-3 mt-md-2">
+                  <label for="region">Region of Residence</label>
+                  <select style="font-weight:normal;color:#71797E;background-color:#ffffff" name="region" class="form-control" required="">
+                    <option value="">-- Select Region --</option>
+                    <option value="I|Region 1 - Ilocos Region">Region 1 - Ilocos Region</option><option value="II|Region 2 - Cagayan Valley">Region 2 - Cagayan Valley</option><option value="III|Region 3 - Central Luzon">Region 3 - Central Luzon</option><option value="IV-A|Region 4A - CALABARZON">Region 4A - CALABARZON</option><option value="IV-B|Region 4B - MIMAROPA">Region 4B - MIMAROPA</option><option value="V|Region 5 - Bicol Region">Region 5 - Bicol Region</option><option value="VI|Region 6 - Western Visayas">Region 6 - Western Visayas</option><option value="VII|Region 7 - Central Visayas">Region 7 - Central Visayas</option><option value="VIII|Region 8 - Eastern Visayas ">Region 8 - Eastern Visayas </option><option value="IX|Region 9 - Zamboanga Peninsula">Region 9 - Zamboanga Peninsula</option><option value="X|Region 10 - Northern Mindanao">Region 10 - Northern Mindanao</option><option value="XI|Region 11 - Davao Region">Region 11 - Davao Region</option><option value="XII|Region 12 - SOCCSKSARGEN">Region 12 - SOCCSKSARGEN</option><option value="XIII|Region 13 - National Capital Region">Region 13 - National Capital Region</option><option value="XIV|Region 14 - Cordillera Administrative Region">Region 14 - Cordillera Administrative Region</option><option value="XV-A|Region 15A - BARRM A">Region 15A - BARRM A</option><option value="XV-B|Region 15B - BARMM B">Region 15B - BARMM B</option><option value="XVI|Region 16 - CARAGA">Region 16 - CARAGA</option>                  </select>
+                </div>
+
+                <div class="form-group col-md-4 mt-3 mt-md-2">
+                  <label for="region">Your Office/College</label>
+                  <select style="font-weight:normal;color:#71797E;background-color:#ffffff" name="client_office" class="form-control" required="">
+                    <option value="">-- Select Office/College --</option>
+                    <option value="NA">Not Applicable (N/A)</option>
+                    <option value="Accounting Division">Accounting Division</option><option value="Alumni and Endowment Fund Center">Alumni and Endowment Fund Center</option><option value="Career Center">Career Center</option><option value="Cashiering Division">Cashiering Division</option><option value="CED-Integrated Developmental School">CED-Integrated Developmental School</option><option value="Center for Advanced Education and Lifelong Learning">Center for Advanced Education and Lifelong Learning</option><option value="Center for Bamboo Research and Technology">Center for Bamboo Research and Technology</option><option value="Center for Computational Analytics and Modelling">Center for Computational Analytics and Modelling</option><option value="Center for Culture and Arts">Center for Culture and Arts</option><option value="Center for General Education of MSU-IIT">Center for General Education of MSU-IIT</option><option value="Center for Information and Communication Technology">Center for Information and Communication Technology</option><option value="Center for Learning and Academic Support Services">Center for Learning and Academic Support Services</option><option value="Center for Pedagogical Innovations">Center for Pedagogical Innovations</option><option value="Ceramic Training Center">Ceramic Training Center</option><option value="College of Arts and Social Sciences">College of Arts and Social Sciences</option><option value="College of Computer Studies">College of Computer Studies</option><option value="College of Economics, Business, and Accountancy">College of Economics, Business, and Accountancy</option><option value="College of Education">College of Education</option><option value="College of Engineering">College of Engineering</option><option value="College of Health Sciences">College of Health Sciences</option><option value="College of Science and Mathematics">College of Science and Mathematics</option><option value="Fab Lab MSU-IIT">Fab Lab MSU-IIT</option><option value="Gender and Development Resource Center">Gender and Development Resource Center</option><option value="Graduate Dorm">Graduate Dorm</option><option value="Hostel">Hostel</option><option value="Human Resource Management Division">Human Resource Management Division</option><option value="iDEYA: Center for Technopreneurship Innovation">iDEYA: Center for Technopreneurship Innovation</option><option value="Infrastructure Services Division">Infrastructure Services Division</option><option value="Institute for Peace and Development in Mindanao">Institute for Peace and Development in Mindanao</option><option value="Institute for Policy Innovation and Leadership">Institute for Policy Innovation and Leadership</option><option value="Internal Audit Services Unit">Internal Audit Services Unit</option><option value="Knowledge and Technology Transfer Office">Knowledge and Technology Transfer Office</option><option value="Legal Services Office">Legal Services Office</option><option value="MSU-IIT Center for Resiliency">MSU-IIT Center for Resiliency</option><option value="MSU-IIT Liaison Office">MSU-IIT Liaison Office</option><option value="Natural Science Museum">Natural Science Museum</option><option value="Office of Admissions, Scholarships and Grants">Office of Admissions, Scholarships and Grants</option><option value="Office of Business Affairs">Office of Business Affairs</option><option value="Office of Communications">Office of Communications</option><option value="Office of Guidance and Counseling">Office of Guidance and Counseling</option><option value="Office of Institutional Planning and Development Services">Office of Institutional Planning and Development Services</option><option value="Office of Medical, Dental and Health Services">Office of Medical, Dental and Health Services</option><option value="Office of Monitoring and Evaluation">Office of Monitoring and Evaluation</option><option value="Office of Research Dissemination">Office of Research Dissemination</option><option value="Office of Research Management">Office of Research Management</option><option value="Office of Sports Development">Office of Sports Development</option><option value="Office of Student Development Services">Office of Student Development Services</option><option value="Office of Student Residences and Food Services">Office of Student Residences and Food Services</option><option value="Office of the Budget Management">Office of the Budget Management</option><option value="Office of the Campus Secretary">Office of the Campus Secretary</option><option value="Office of the Director for Administration">Office of the Director for Administration</option><option value="Office of the Director for Finance">Office of the Director for Finance</option><option value="Office of the National Services Training Program">Office of the National Services Training Program</option><option value="Office of the Quality Assurance Management Services">Office of the Quality Assurance Management Services</option><option value="Office of the University Registrar">Office of the University Registrar</option><option value="Office of the Vice-Chancellor for International Affairs">Office of the Vice-Chancellor for International Affairs</option><option value="Policy Center for Governance, Public Leadership and Management">Policy Center for Governance, Public Leadership and Management</option><option value="Policy Center for Human Rights and Sustainable Development">Policy Center for Human Rights and Sustainable Development</option><option value="Premier Research Institute of Science and Mathematics">Premier Research Institute of Science and Mathematics</option><option value="Procurement Management Division">Procurement Management Division</option><option value="Research Center for Healthy Aging (RCHA) of MSU-IIT">Research Center for Healthy Aging (RCHA) of MSU-IIT</option><option value="Research Institute for Engineering and Innovative Technology">Research Institute for Engineering and Innovative Technology</option><option value="Research Integrity and Compliance Office">Research Integrity and Compliance Office</option><option value="School of Interdisciplinary Studies">School of Interdisciplinary Studies</option><option value="Security and Investigation Division">Security and Investigation Division</option><option value="Selling and Renting Unit">Selling and Renting Unit</option><option value="Supply and Property Management Division">Supply and Property Management Division</option><option value="TAPU-Ceramic Training Center">TAPU-Ceramic Training Center</option><option value="Technology Application and Promotion Unit">Technology Application and Promotion Unit</option><option value="University Library">University Library</option><option value="University Library- CASS">University Library- CASS</option><option value="University Library- CEBA">University Library- CEBA</option><option value="University Library- CED">University Library- CED</option><option value="University Library- CED-IDS">University Library- CED-IDS</option><option value="University Library- CHS">University Library- CHS</option><option value="University Library- COE">University Library- COE</option><option value="University Library- CSM">University Library- CSM</option><option value="University Library- Main">University Library- Main</option><option value="WE CARE Office">WE CARE Office</option>                    
+                  </select>
+                </div>
+                
+              
+              <div class="form-group mt-3"></div>
+              <div class="form-group mt-3"></div>
+              <div class="text-center mt-md-2"><input style="width:300px;height:60px;font-size:20px;color:#FFFFFF;background-color:#830006;" type="submit" class="btn btn-danger" value=" &nbsp; &nbsp; Continue to Survey &nbsp; &nbsp; "></div>
+            
+          </div>        
+
+        </div>
+        
+      </div></form>
+    
+
+  <!-- ======= Footer ======= -->
+  <br><br>		
+
+		<!-- Footer -->
+			<footer id="footer">
+				
+				<ul class="copyright">
+					<!-- 2025&copy; Center for Information and Communication Technology<br>cict@g.msuiit`.edu.ph -->
+				</ul>
+			</footer>
+
+  
+
+      <script src=""></script>
+      <script src="https://one.msuiit.edu.ph/ovcsi/csms/msu/library/LTE/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="https://one.msuiit.edu.ph/ovcsi/csms/msu/library/LTE/imported_js/jquery-ui.min.js"></script>
+<script src="https://one.msuiit.edu.ph/ovcsi/csms/msu/library/dist/js/dd.min.js?ver=4.0"></script>
+
+  <script type="text/javascript">
+    window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+    $(document).ready(function() {
+        
+        $('input[name=others_service_availed]').attr("disabled",true);       
+        $("#cc2").prop("disabled", true);
+        $("#cc3").prop("disabled", true);
+        $("#cc1").change(function(){           
+            var service = $('#cc1').find(":selected").val();            
+            if (service=='4' || service=='' || service == 0){
+                $('#cc2').prop("disabled",true);   
+                $('#cc2').prop("required",false);        
+                $('#cc2').val("");     
+                $('#cc3').prop("disabled",true);    
+                $('#cc3').prop("required",false);   
+                $('#cc3').val("");                         
+            }else{
+                $('#cc2').prop("disabled",false);
+                $('#cc2').prop("required",true);
+                $('#cc3').prop("disabled",false);   
+                $('#cc3').prop("required",true);              
+            }            
+        });
+        
+        $("#serviceavailed").change(function(){
+            var service = $('#serviceavailed').find(":selected").val();
+            if (service=='Others'){
+                $('input[name=others_service_availed]').attr("disabled",false);
+                $('input[name=others_service_availed]').attr("required",true);
+            }else{
+                $('input[name=others_service_availed]').attr("disabled",true);
+                $('input[name=others_service_availed]').attr("required",false);
+            }
+        });
+
+        $("#classification").change(function(){
+            var category = $('#classification').find(":selected").val();
+            if (category==""){
+                $('input[name=others_service_availed]').attr("disabled",true);
+                $('input[name=others_service_availed]').attr("required",false);
+            }
+        });
+
+        
+        $.ajax({
+            type: "GET",
+            url: "https://one.msuiit.edu.ph/ovcsi/csms/msu/index.php/msu_ol_css/get_classification",
+            data:{id:$(this).val()}, 
+            beforeSend :function(){
+          $('.classification').find("option:eq(0)").html("Please wait...");
+            },                         
+            success: function (data) {
+              /*get response as json */
+               $('.classification').find("option:eq(0)").html("-- Select Classification --");
+              var obj=jQuery.parseJSON(data);
+              $(obj).each(function()
+              {
+               var option = $('<option />');
+               option.attr('value', this.value).text(this.label);           
+               $('.classification').append(option);
+             });  
+
+              /*ends */
+              
+            }
+          });
+
+          $('.classification').change(function(){
+          $.ajax({
+            type: "POST",
+            url: "https://one.msuiit.edu.ph/ovcsi/csms/msu/index.php/msu_ol_css/get_charter",
+            data:{id:$(this).val()}, 
+            beforeSend :function(){
+            $(".serviceavailed option:gt(0)").remove();           
+            $('.serviceavailed').find("option:eq(0)").html("Please wait...");
+
+            },                         
+            success: function (data) {
+              /*get response as json */
+               $('.serviceavailed').find("option:eq(0)").html("-- Select Service Availed --");
+              var obj=jQuery.parseJSON(data);
+              $(obj).each(function()
+              {
+               var option = $('<option />');
+               option.attr('value', this.value).text(this.label);           
+               $('.serviceavailed').append(option);
+             });  
+
+              /*ends */
+              
+            }
+          });
+        });
+    
+    });
+        
+</script>                    
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;8d774a5b402c4d1e99bc896f3aaeb55e&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+</div></body></html>
